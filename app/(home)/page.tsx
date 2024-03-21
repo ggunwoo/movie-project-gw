@@ -5,7 +5,7 @@ export const metadata = {
   title: "HOME",
 };
 
-export const API_URL = "***REMOVED***";
+export const API_URL = "***REMOVED***"
 
 async function getMovies() {
   // await new Promise((resolve) => setTimeout(resolve, 1000));
