@@ -1,0 +1,10 @@
+.poster {
+  grid-area: a;
+  border-radius: 20px;
+}
+
+.poster img {
+  min-width: 250px;
+  width: 100%;
+}
+
