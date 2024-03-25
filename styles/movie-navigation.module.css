@@ -1,0 +1,14 @@
+.container {
+  width: 100%;
+  grid-area: b;
+}
+.container ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.container li {
+  padding: 8px 16px;
+  background-color: #333;
+  border-radius: 15px;
+}
