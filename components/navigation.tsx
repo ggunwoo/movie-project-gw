@@ -1,24 +1,29 @@
 "use client";
 
+import styles from "../styles/navigation.module.css";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import styles from "../styles/navigation.module.css";
+import { IoHome, IoCaretBack } from "react-icons/io5";
 
 export default function Navigation() {
   const path = usePathname(); 
   const [count, setCount] = useState<number>(0)
 
+  if(path==="/"){
+    return null;
+  }
+
   return (
     <nav className={styles.nav}>
-      <ul>
-        <li>
-          <Link href="/">Home</Link> {path === "/" ? "🔥" : ""}
-        </li>
-        <li>
-          <Link href="/about-us">About-Us</Link> {path === "/about-us" ? "🔥" : ""}
-        </li>
-      </ul>
+      <Link href="/">
+        <ul>
+          <li>
+            {/* <IoCaretBack /> */}
+            <IoHome />
+          </li>
+        </ul>
+      </Link>
     </nav>
   );
 }
