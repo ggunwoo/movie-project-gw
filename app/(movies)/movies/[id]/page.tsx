@@ -1,20 +1,30 @@
-import { getMovie } from "../../../../components/movie-poster";
-import styles from "../../../../styles/movie-info.module.css";
+"use client";
 
-export default async function MovieCredits({
-  params: { id },
-}: {
-  params: { id: string };
-}) {
-  const movie = await getMovie(id);
-  return (
-    <div className={styles.credits}>
-      <h1 className={styles.title}>{movie.title}</h1>
-      <h3> ⭐ {movie.vote_average.toFixed(1)}</h3>
-      <p>{movie.overview}</p>
-      <a href={movie.homepage} target={"_blank"}>
-        Homepage &rarr;
-      </a>
-    </div>
-  );
+import { redirect, useSearchParams } from "next/navigation";
+import MovieCreditsPage from "@/components/detail-page/movie-credits";
+import MovieVideosPage from "@/components/detail-page/movie-videos";
+import MovieSimilarPage from "@/components/detail-page/movie-similar";
+
+export default function Page({ params: { id } }: { params: { id: string } }) {
+  const searchParams = useSearchParams();
+  const search = searchParams.get("page");
+  const hasSearch = searchParams.has("page")
+
+  if(!hasSearch || search===''){
+    redirect(`/movies/${id}/?page=credits`)
+  }
+
+  switch(search) {
+    case "credits":
+      return <MovieCreditsPage id={id} />;
+
+    case "video":
+      return <MovieVideosPage id={id} />;
+
+    case "similar":
+      return <MovieSimilarPage />;
+    
+    default:
+      return <div>콘텐츠 불러오기 실패</div>
+  }
 }

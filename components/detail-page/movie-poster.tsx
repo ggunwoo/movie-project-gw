@@ -1,10 +1,6 @@
-import { API_URL } from "../util/contants";
-import styles from "../styles/movie-poster.module.css";
-
-export async function getMovie(id: string) {
-  const response = await fetch(`${API_URL}/${id}`);
-  return response.json();
-}
+import { API_URL } from "@/util/contants";
+import styles from "@/styles/detail-page/movie-poster.module.css";
+import { getMovie } from "@/util/getMovie";
 
 export default async function MovieInfo({ id }: { id: string }) {
   const movie = await getMovie(id);
