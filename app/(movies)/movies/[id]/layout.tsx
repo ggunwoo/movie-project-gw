@@ -1,8 +1,9 @@
-import styles from "../../../../styles/movie-detailPage.module.css";
+import styles from "@/styles/detail-page/movie-detailPage.module.css";
 import { Suspense } from "react";
-import MoviePoster, { getMovie } from "../../../../components/movie-poster";
-import MovieNav from "../../../../components/movie-nav";
-import MovieVideos from "../../../../components/movie-videos";
+import { getMovie } from "@/util/getMovie";
+import MoviePoster from "@/components/detail-page/movie-poster"
+import MovieInfo from "@/components/detail-page/movie-info";
+import MovieNav from "@/components/detail-page/movie-nav";
 
 export async function generateMetadata({
   params: { id },
@@ -29,16 +30,17 @@ export default async function MovieDetailLayout({
         <MoviePoster id={id} />
       </Suspense>
 
+      {/* 우측 Aticle */}
+      <Suspense fallback={<h1>Loading movie info</h1>}>
+        <MovieInfo id={id} />
+      </Suspense>
+
       {/* movie-article-nav */}
       <MovieNav id={id} />
 
-      {/* 우측 Aticle */}
-      <Suspense fallback={<h1>Loading movie info</h1>}>
+      {/* content */}
+      <Suspense fallback={<h1>Loading...</h1>}>
         { children }
-      </Suspense>
-      {/* 하단 video-section */}
-      <Suspense fallback={<h1>Loading movie videos</h1>}>
-        <MovieVideos id={id} />
       </Suspense>
     </div>
   );

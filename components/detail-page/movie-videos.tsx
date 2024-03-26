@@ -1,12 +1,12 @@
-import { API_URL } from "../util/contants";
-import styles from "../styles/movie-videos.module.css";
+import { API_URL } from "@/util/contants";
+import styles from "@/styles/detail-page/movie-videos.module.css"
 
 async function getVideos(id: string) {
   const response = await fetch(`${API_URL}/${id}/videos`);
   return response.json();
 }
 
-export default async function MovieVideos({ id }: { id: string }) {
+export default async function MovieVideosPage({ id }: { id: string }) {
   const videos = await getVideos(id);
   return (
     <div className={styles.container}>
