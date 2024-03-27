@@ -1,5 +1,6 @@
-import styles from "@/styles/detail-page/movie-credits.module.css";
+import styles from "@/styles/detail-page/movie-content.module.scss";
 import { API_URL } from "@/util/contants";
+
 export async function getCredits(id: string) {
   const response = await fetch(`${API_URL}/${id}/credits`);
   return response.json();
@@ -7,14 +8,12 @@ export async function getCredits(id: string) {
 
 export default async function MovieCreditPage({ id }: { id: string }) {
   const credits = await getCredits(id);
-  console.log(credits);
   return (
     <div className={styles.container}>
-      {credits.map((credit, i) => (
-        <div key={credit.id}>
-          <div>{credit.id}</div>
+      {credits.map((credit) => (
+        <div className={styles.card} key={credit.id}>
           <img src={credit.profile_path} />
-          <div>{credit.name}</div>
+          <p className={styles.name}>{credit.name}</p>
         </div>
       ))}
     </div>

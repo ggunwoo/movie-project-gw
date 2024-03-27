@@ -1,9 +1,8 @@
-import styles from "@/styles/detail-page/movie-detailPage.module.css";
+import styles from "@/styles/detail-page/movie-page.module.scss";
 import { Suspense } from "react";
-import { getMovie } from "@/util/getMovie";
-import MoviePoster from "@/components/detail-page/movie-poster"
+import { getMovie } from "@/util/getData";
+import MoviePoster from "@/components/detail-page/movie-poster";
 import MovieInfo from "@/components/detail-page/movie-info";
-import MovieNav from "@/components/detail-page/movie-nav";
 
 export async function generateMetadata({
   params: { id },
@@ -23,25 +22,34 @@ export default async function MovieDetailLayout({
   children: React.ReactNode;
   params: { id: string };
 }) {
+  const movies = await getMovie(id);
   return (
-    <div className={styles.container}>
+    <main className={styles.container}>
       {/* 좌측 poster-section */}
-      <Suspense fallback={<h1>Loading movie poster</h1>} >
-        <MoviePoster id={id} />
-      </Suspense>
+      <section className={styles.header__container}>
+        {/* Background Image */}
+        <div
+          className={styles.bg__img}
+          style={{
+            background: `url(${movies.backdrop_path}) no-repeat center 0`,
+            backgroundSize: "100% auto",
+          }}
+        ></div>
+        <div className={styles.bg__mask}></div>
+        <article>
+          <Suspense fallback={<h1>Loading movie poster</h1>}>
+            <MoviePoster id={id} />
+          </Suspense>
 
-      {/* 우측 Aticle */}
-      <Suspense fallback={<h1>Loading movie info</h1>}>
-        <MovieInfo id={id} />
-      </Suspense>
-
-      {/* movie-article-nav */}
-      <MovieNav id={id} />
+          {/* 우측 Infomation-section */}
+          <Suspense fallback={<h1>Loading movie info</h1>}>
+            <MovieInfo id={id} />
+          </Suspense>
+        </article>
+      </section>
 
       {/* content */}
-      <Suspense fallback={<h1>Loading...</h1>}>
-        { children }
-      </Suspense>
-    </div>
+      <Suspense fallback={<h1>Loading...</h1>}>{children}</Suspense>
+    </main>
   );
 }

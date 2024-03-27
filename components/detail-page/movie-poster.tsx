@@ -1,6 +1,5 @@
-import { API_URL } from "@/util/contants";
-import styles from "@/styles/detail-page/movie-poster.module.css";
-import { getMovie } from "@/util/getMovie";
+import styles from "@/styles/detail-page/movie-poster.module.scss";
+import { getMovie } from "@/util/getData";
 
 export default async function MovieInfo({ id }: { id: string }) {
   const movie = await getMovie(id);
