@@ -1,0 +1,59 @@
+// *
+.synopsys__container,
+.credits__container,
+.videos__container,
+.similar__container {
+  width: 80%;
+  grid-area: bottom;
+  margin: 0 auto;
+}
+// *
+
+// synopsys
+.synopsys__container {
+  overflow: hidden;
+}
+
+// credits
+.credits__container {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20%, auto));
+  justify-content: space-between;
+  box-sizing: border-box;
+
+  .card {
+    padding: 24px;
+    margin: 8px;
+    background-color: #2d2d2d;
+    border-radius: 15px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+// video
+.videos__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding-bottom: 100px;
+
+  iframe {
+    width: 100%;
+    border-radius: 10px;
+    opacity: 0.8;
+    transition: opacity 0.2s ease-in-out;
+    margin: 0 auto;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+// similar
+.similar__container {
+}
