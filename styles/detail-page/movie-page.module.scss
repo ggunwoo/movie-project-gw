@@ -4,56 +4,59 @@
 
   // 헤더 콘텐츠
   .header__container {
-    width: 100%;
-    height: 700px;
-    grid-area: top;
     position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 600px;
+    grid-area: top;
     overflow: hidden;
     z-index: 1;
     
-    article {
+    > article {
+      position: absolute;
+      top: 50%;
+      left: 50%;
       width: 70%;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       grid-template-rows: auto;
-      grid-template-areas: "poster info info info ";
-      position: absolute;
-      top: 50%;
-      left: 50%;
+      grid-template-areas: "poster info info info";
+      gap: 56px;
       transform: translate(-50%, -50%);
       z-index: 4;
     }
 
     // 백그라운드 이미지
     .bg__img {
-      width: 70%;
-      height: 100%;
-      opacity: .7;
       position: absolute;
       left: 30%;
       bottom: 0px;
+      width: 70%;
+      height: 100%;
+      opacity: .7;
       z-index: 1;
       &::after {
         content: "";
-        display: block;
         position: absolute;
         top: 0;
         left: 0;
+        display: block;
         width: 100%;
         height: 100%;
         z-index: 2;
-        background-color: rgba(15, 15, 15, .75);
+        background-color: rgba(0, 0, 0, .3);
       }
     }
     .bg__mask {
-      width: 100%;
-      height: 100%;
       position: absolute;
       top: 0;
       left: 0;
+      width: 100%;
+      height: 100%;
       z-index: 4;
-      background: linear-gradient(to right,#000 30%,rgba(0,0,0,0) 60%,#000 100%),
-                  linear-gradient(to top,#000 10%,rgba(0,0,0,0) 60%, transparent 100%);
+      background: linear-gradient(to right,#000 40%,rgba(15,15,15,0) 70%,#000 100%),
+                  linear-gradient(to top,#000 15%,rgba(15,15,15,.1) 60%, transparent 100%);
     }
   }
 }

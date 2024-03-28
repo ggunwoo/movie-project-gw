@@ -6,7 +6,9 @@
 }
 
 .poster img {
-  min-width: 250px;
   width: 100%;
-  border-radius: 5%;
+  min-width: 250px;
+  max-width: 400px;
+  border-radius: 7%;
+  filter: drop-shadow(2px -1px 4rem rgba(255, 255, 255, .1));
 }

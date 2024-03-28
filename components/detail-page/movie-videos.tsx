@@ -22,8 +22,6 @@ export default async function MovieVideosPage({ id }: { id: string }) {
 export async function MovieVideosSlice({ id }: { id: string }) {
   const videos = await getVideos(id);
   const sliceVideos = videos.slice(0, 5);
-
-  console.log(videos.length)
   return (
     <article>
       {sliceVideos.map((video) => 

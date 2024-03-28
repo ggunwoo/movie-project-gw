@@ -1,29 +1,18 @@
 .nav {
-  background-color: #2d2d2d;
   position: fixed;
   top: 24px;
   left: 3%;
   z-index: 10;
-  border-radius: 100%;
-}
-.nav a {
-  display: block;
-  padding: 24px;
-}
-.nav ul {
-  display: flex;
-  justify-content: center;
-}
-.nav ul li {
-  list-style: none;
-  transform: none;
-  opacity: 0.7;
-  transition: all 0.2s ease-in-out;
-}
-.nav ul li svg {
-  font-size: 24px;
-}
-.nav:hover ul li {
-  transform: scale(1.05);
-  opacity: 1;
+  // opacity: .8;
+  a {
+    display: block;
+    padding: 24px;
+    svg {
+      font-size: 24px;
+    }
+  }
+  &:hover {
+    // transform: scale(1.05);
+    // opacity: 1;
+  }
 }

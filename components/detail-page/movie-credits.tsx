@@ -25,7 +25,7 @@ export async function MovieCreditSlice({id}: {id: string;}){
   return (
     <ul>
       {sliceCredits.map((credit) => (
-        <li>
+        <li key={credit.id}>
           <img src={credit.profile_path}></img>
         </li>
       ))}
