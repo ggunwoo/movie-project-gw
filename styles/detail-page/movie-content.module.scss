@@ -7,14 +7,12 @@
   grid-area: bottom;
   margin: 0 auto;
 }
-// *
 
 // synopsys
 .synopsys__container {
   overflow: hidden;
 
-  
-  section {
+  > article {
     // h2 전체스타일
     margin: 0 0 50px;
     h2 {
@@ -22,11 +20,11 @@
     }
   }
   .about {
-    h2 {
+    > h2 {
       font-size: 2rem;
       margin-bottom: 32px;
     }
-    p {
+    > p {
       width: 50%;
     }
   }
@@ -37,7 +35,7 @@
     }
   }
   .videos {
-    article {
+    > article {
       display: flex;
       justify-content: flex-start;
       gap: 16px;
@@ -53,7 +51,7 @@
     }
   }
   .similar {
-    ul {
+    > ul {
       display: flex;
       justify-content: flex-start;
       gap: 16px;

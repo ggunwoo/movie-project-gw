@@ -4,24 +4,20 @@ import styles from "../styles/navigation.module.scss";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { IoHome } from "react-icons/io5";
+import { IoChevronBack, IoHome } from "react-icons/io5";
 
 export default function Navigation() {
-  const path = usePathname(); 
-  const [count, setCount] = useState<number>(0)
+  const path = usePathname();
+  const [count, setCount] = useState<number>(0);
 
-  if(path==="/"){
+  if (path === "/") {
     return null;
   }
 
   return (
     <nav className={styles.nav}>
       <Link href="/">
-        <ul>
-          <li>
-            <IoHome />
-          </li>
-        </ul>
+        <IoChevronBack /> <IoHome />
       </Link>
     </nav>
   );

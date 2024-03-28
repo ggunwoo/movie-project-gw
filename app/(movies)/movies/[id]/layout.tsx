@@ -28,13 +28,13 @@ export default async function MovieDetailLayout({
       {/* 좌측 poster-section */}
       <section className={styles.header__container}>
         {/* Background Image */}
-        <div
+        <figure
           className={styles.bg__img}
           style={{
             background: `url(${movies.backdrop_path}) no-repeat center 0`,
             backgroundSize: "100% auto",
           }}
-        ></div>
+        ></figure>
         <div className={styles.bg__mask}></div>
         <article>
           <Suspense fallback={<h1>Loading movie poster</h1>}>
