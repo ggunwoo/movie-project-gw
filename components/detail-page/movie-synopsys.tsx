@@ -2,13 +2,16 @@
 
 import styles from "@/styles/detail-page/movie-content.module.scss";
 import { Suspense } from "react";
-import { getCredits, getMovie } from "@/util/getData";
+import Link from "next/link";
+import { getMovie, getSimilar, getVideos } from "@/util/getData";
 import { MovieVideosSlice } from "./movie-videos";
 import { MovieSimilarSlice } from "./movie-similar";
 import { MovieCreditSlice } from "./movie-credits";
 
 export default async function MovieSynopsys({ id }: { id: string }) {
   const movies = await getMovie(id);
+  const videos = await getVideos(id);
+  const similar = await getSimilar(id);
 
   return (
     <section className={styles.synopsys__container}>
@@ -25,27 +28,42 @@ export default async function MovieSynopsys({ id }: { id: string }) {
       {/* 감독/출연 */}
       <article className={styles.credits}>
         <h2>CAST</h2>
-        <Suspense fallback={<div>Loading...</div>}>
-          <MovieCreditSlice id={id} />
-        </Suspense>
+        <div className={styles.article__list}>
+          <Suspense fallback={<div>Loading...</div>}>
+            <MovieCreditSlice id={id} />
+          </Suspense>
+          <Link href={`/movies/${id}/?page=similar`}>
+            <p>See All &rarr;</p>
+          </Link>
+        </div>
       </article>
 
       {/* 비디오 */}
       <article className={styles.videos}>
-        <h2>
-          <i>{movies.title.toUpperCase()}</i> VIDEOS
-        </h2>
-        <Suspense fallback={<div>Loading...</div>}>
-          <MovieVideosSlice id={id} />
-        </Suspense>
+        <h2>VIDEOS OF {movies.title.toUpperCase()}</h2>
+        <div className={styles.article__list}>
+          <Suspense fallback={<div>Loading...</div>}>
+            <MovieVideosSlice id={id} />
+          </Suspense>
+          {videos.length > 5 && (
+            <Link href={`/movies/${id}/?page=video`}>
+              <p>View All &rarr;</p>
+            </Link>
+          )}
+        </div>
       </article>
 
-      {/* 관련된 추천 영상 */}
+      {/* 관련된 추천 영화 */}
       <article className={styles.similar}>
         <h2>YOU MIGHT ALSO LIKE</h2>
         <Suspense fallback={<div>Loading...</div>}>
           <MovieSimilarSlice id={id} />
         </Suspense>
+        {similar.length > 5 && (
+          <Link href={`/movies/${id}/?page=similar`}>
+            <p>{similar.length} Movies &rarr;</p>
+          </Link>
+        )}
       </article>
     </section>
   );
