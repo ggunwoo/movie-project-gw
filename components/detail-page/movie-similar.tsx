@@ -1,5 +1,4 @@
 import styles from "@/styles/detail-page/movie-content.module.scss";
-import Link from "next/link";
 import { getSimilar } from "@/util/getData";
 
 export default async function MovieSimilarPage({ id }: { id: string }) {
@@ -18,10 +17,6 @@ export async function MovieSimilarSlice({ id }: { id: string }) {
           <p>similar</p>
         </li>
       ))}
-      {
-        similar.length > 5 &&
-        <Link href={`/movies/${id}/?page=similar`}>MORE &rarr;</Link>
-      }
     </ul>
   );
 }

@@ -1,5 +1,4 @@
 import styles from "@/styles/detail-page/movie-content.module.scss";
-import Link from "next/link";
 import { getCredits } from "@/util/getData";
 
 
@@ -27,9 +26,10 @@ export async function MovieCreditSlice({id}: {id: string;}){
       {sliceCredits.map((credit) => (
         <li key={credit.id}>
           <img src={credit.profile_path}></img>
+          <p>{credit.original_name}</p>
+          <span>as {credit.character}</span>
         </li>
       ))}
-      <Link prefetch href={`/movies/${id}/?page=similar`}>See all &rarr;</Link>
     </ul>
   )
 }
