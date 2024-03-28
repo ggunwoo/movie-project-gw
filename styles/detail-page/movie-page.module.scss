@@ -5,16 +5,18 @@
   // 헤더 콘텐츠
   .header__container {
     width: 100%;
-    height: 560px;
+    height: 700px;
     grid-area: top;
     position: relative;
+    overflow: hidden;
     z-index: 1;
     
     article {
-      width: 80%;
+      width: 70%;
       display: grid;
+      grid-template-columns: repeat(4, 1fr);
       grid-template-rows: auto;
-      grid-template-areas: "poster info info info info info info info";
+      grid-template-areas: "poster info info info ";
       position: absolute;
       top: 50%;
       left: 50%;
@@ -24,13 +26,12 @@
 
     // 백그라운드 이미지
     .bg__img {
-      width: 80%;
+      width: 70%;
       height: 100%;
-      opacity: .8;
+      opacity: .7;
       position: absolute;
-      left: 50%;
-      top: 0;
-      transform: translateX(-50%);
+      left: 30%;
+      bottom: 0px;
       z-index: 1;
       &::after {
         content: "";
@@ -51,8 +52,8 @@
       top: 0;
       left: 0;
       z-index: 4;
-      background: linear-gradient(to right,#000 30%,rgba(15,15,15,0) 70%,#000 90%),
-                  linear-gradient(to top,#000 5%,rgba(15,15,15,0) 15%, transparent 100%);
+      background: linear-gradient(to right,#000 30%,rgba(0,0,0,0) 60%,#000 100%),
+                  linear-gradient(to top,#000 10%,rgba(0,0,0,0) 60%, transparent 100%);
     }
-  }  
+  }
 }
