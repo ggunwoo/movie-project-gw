@@ -18,7 +18,6 @@ export default function Page({ params: { id } }: { params: { id: string } }) {
   }
   if(!hasSearch || search===''){ HandleRedirect() }
 
-
   switch(search) {
     case "main":
       return <MovieSynopsys id={id} />;
@@ -29,7 +28,7 @@ export default function Page({ params: { id } }: { params: { id: string } }) {
       return <MovieVideosPage id={id} />;
 
     case "similar":
-      return <MovieSimilarPage />;
+      return <MovieSimilarPage id={id} />;
     
     default: HandleRedirect()
   }
