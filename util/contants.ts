@@ -1,1 +1,1 @@
-export const API_URL = "***REMOVED***"
+export const API_URL: string = "***REMOVED***"
