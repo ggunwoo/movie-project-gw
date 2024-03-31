@@ -14,6 +14,9 @@
     height: 100%;
     border-bottom: 1px solid rgba(31, 31, 31, 0.7);
     padding: 75px 0;
+    &:first-child {
+      padding: 0 0 75px;
+    }
     h2 {
       font-weight: bold;
       font-size: 1.5rem;
@@ -26,7 +29,7 @@
     }
     a {
       float: right;
-      margin: 16px 0 0;
+      margin: 24px 0 0;
     }
   }
   // -------------------------------------------
@@ -36,9 +39,21 @@
       font-size: 2rem;
       margin: 0 0 32px 0;
     }
-    p {
-      width: 50%;
+    > p {
+      width: 70%;
       line-height: 1.5rem;
+      padding: 0 0 0 16px;
+      margin: 0 0 150px;
+    }
+    // 제조국
+    h3 {
+      color: #888;
+      font-weight: bold;
+      font-size: 1rem;
+      margin: 0 0 16px;
+    }
+    ul {
+      margin: 0 0 50px;
     }
   }
   // 출연진
@@ -51,6 +66,7 @@
           width: 100%;
           border-radius: 3%;
           margin-bottom: 8px;
+          padding: 0 24px 16px;
         }
         p {
           font-size: 18px;

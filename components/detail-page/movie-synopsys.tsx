@@ -8,6 +8,14 @@ import { MovieVideosSlice } from "./movie-videos";
 import { MovieSimilarSlice } from "./movie-similar";
 import { MovieCreditSlice } from "./movie-credits";
 
+// production_companies
+interface companie {
+  id: number;
+  logo_path: string;
+  name: string;
+  origin_country: string;
+}
+
 export default async function MovieSynopsys({ id }: { id: string }) {
   const movies = await getMovie(id);
   const videos = await getVideos(id);
@@ -23,6 +31,35 @@ export default async function MovieSynopsys({ id }: { id: string }) {
           <h2>"The Best Movie"</h2>
         )}
         <p>{movies.overview}</p>
+
+        {/* 제조사 */}
+        <h3>Production Companies</h3>
+        <ul>
+          {movies.production_companies.map(
+            (companie: companie, index: number, array: companie[]) => (
+              <li key={companie.id}>
+                <p>
+                  {companie.name}
+                  {index < array.length - 1 ? "," : ""}
+                </p>
+              </li>
+            )
+          )}
+        </ul>
+        {/* 제조국 */}
+        <h3>Production Countries</h3>
+        <ul>
+          {movies.production_countries.map(
+            (countrie, index: number, array) => (
+              <li key={countrie.id}>
+                <p>
+                  {countrie.name}
+                  {index < array.length - 1 ? "," : ""}
+                </p>
+              </li>
+            )
+          )}
+        </ul>
       </article>
 
       {/* 감독/출연 */}
