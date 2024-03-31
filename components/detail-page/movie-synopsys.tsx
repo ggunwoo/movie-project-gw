@@ -8,13 +8,7 @@ import { MovieVideosSlice } from "./movie-videos";
 import { MovieSimilarSlice } from "./movie-similar";
 import { MovieCreditSlice } from "./movie-credits";
 
-// production_companies
-interface companie {
-  id: number;
-  logo_path: string;
-  name: string;
-  origin_country: string;
-}
+
 
 export default async function MovieSynopsys({ id }: { id: string }) {
   const movies = await getMovie(id);
@@ -50,8 +44,8 @@ export default async function MovieSynopsys({ id }: { id: string }) {
         <h3>Production Countries</h3>
         <ul>
           {movies.production_countries.map(
-            (countrie, index: number, array) => (
-              <li key={countrie.id}>
+            (countrie: countries, index: number, array: countries[]) => (
+              <li key={index}>
                 <p>
                   {countrie.name}
                   {index < array.length - 1 ? "," : ""}
