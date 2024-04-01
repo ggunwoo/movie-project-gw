@@ -13,7 +13,7 @@
   h2 {
     font-size: 2rem;
     font-weight: bold;
-    margin: 0 0 100px;
+    margin: 0 0 70px;
     padding: 0 0 0 1rem;
     border-left: 5px solid #666;
   }
@@ -55,7 +55,7 @@
       width: 70%;
       line-height: 1.5rem;
       padding: 0 0 0 16px;
-      margin: 0 0 150px;
+      margin: 0 0 100px;
     }
     // 제조국
     h3 {
@@ -134,26 +134,22 @@
 
 // credits
 .credits__container {
-  h2 {
-    
-  }
   ul {
     text-align: left;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, auto));
+    grid-template-columns: repeat(auto-fit, minmax(350px, auto));
     grid-template-rows: 1fr auto;
-    gap: 20px;
+    justify-content: space-between;
+    gap: 50px;
     li {
       display: flex;
       figure {
-        width: 30%;
         img {
           width: 100%;
-          height: auto;
+          height: 100%;
         }
       }
       article {
-        width: 60%;
         padding: 16px 0 0 36px;
         .name {
           font-size: 1.25rem;
