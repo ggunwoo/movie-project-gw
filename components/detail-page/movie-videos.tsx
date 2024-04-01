@@ -5,17 +5,25 @@ import Link from "next/link";
 export default async function MovieVideosPage({ id }: { id: string }) {
   const videos = await getVideos(id);
   return (
-    <main className={styles.videos__container}>
-      {videos.map((video) => (
-        <iframe
-          key={video.id}
-          src={`https://youtube.com/embed/${video.key}`}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;"
-          allowFullScreen
-          title={video.name}
-        />
-      ))}
-    </main>
+    <section className={styles.videos__container}>
+      <h2>VIDEOS</h2>
+      <ul>
+        {videos.map((video) => (
+          <li>
+            <iframe
+              key={video.id}
+              src={`https://youtube.com/embed/${video.key}`}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;"
+              allowFullScreen
+              title={video.name}
+            />
+            <p>
+              {video.name} <span>({video.type})</span>
+            </p>
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 }
 
@@ -26,24 +34,22 @@ export async function MovieVideosSlice({ id }: { id: string }) {
   return (
     <article className={styles.videos}>
       <h2>VIDEOS OF {movies.title.toUpperCase()}</h2>
-      <div className={styles.article__list}>
-        <ul>
-          {sliceVideos.map((video) => (
-            <li>
-              <iframe
-                key={video.id}
-                src={`https://youtube.com/embed/${video.key}`}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;"
-                allowFullScreen
-                title={video.name}
-              />
-            </li>
-          ))}
-        </ul>
-        <Link href={`/movies/${id}/video`}>
-          <p>View All &rarr;</p>
-        </Link>
-      </div>
+      <ul>
+        {sliceVideos.map((video) => (
+          <li>
+            <iframe
+              key={video.id}
+              src={`https://youtube.com/embed/${video.key}`}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;"
+              allowFullScreen
+              title={video.name}
+            />
+          </li>
+        ))}
+      </ul>
+      <Link href={`/movies/${id}/video`}>
+        <p>View All &rarr;</p>
+      </Link>
     </article>
   );
 }

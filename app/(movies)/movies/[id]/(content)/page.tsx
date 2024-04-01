@@ -1,9 +1,9 @@
-import MovieAbout from "@/components/detail-page/movie-about";
-import { MovieCreditSlice } from "@/components/detail-page/movie-credits";
-import { MovieSimilarSlice } from "@/components/detail-page/movie-similar";
-import { MovieVideosSlice } from "@/components/detail-page/movie-videos";
 import styles from "@/styles/detail-page/movie-content.module.scss";
 import { Suspense } from "react";
+import MovieAbout from "@/components/detail-page/movie-about";
+import { MovieCreditSlice } from "@/components/detail-page/movie-credits";
+import { MovieVideosSlice } from "@/components/detail-page/movie-videos";
+import { MovieSimilarSlice } from "@/components/detail-page/movie-similar";
 
 export default function Page({ params: { id } }: { params: { id: string } }) {
   return (
