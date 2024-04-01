@@ -17,7 +17,7 @@ export default function Navigation() {
   return (
     <nav className={styles.nav}>
       <Link href="/">
-        <IoChevronBack />
+        <IoHome />
       </Link>
     </nav>
   );
