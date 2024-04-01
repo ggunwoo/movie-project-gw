@@ -5,10 +5,7 @@ export default async function MovieInfo({ id }: { id: string }) {
   const movie = await getMovie(id);
   return (
     <figure className={styles.poster}>
-      <img
-        src={movie.poster_path}
-        alt={movie.title}
-      />
+      <img src={movie.poster_path} alt={movie.title} />
     </figure>
   );
 }

@@ -1,35 +1,28 @@
-"use client";
-
-import { redirect, useSearchParams } from "next/navigation";
-import MovieCreditsPage from "@/components/detail-page/movie-credits";
-import MovieVideosPage from "@/components/detail-page/movie-videos";
-import MovieSimilarPage from "@/components/detail-page/movie-similar";
-import MovieSynopsys from "@/components/detail-page/movie-synopsys";
+import MovieAbout from "@/components/detail-page/movie-about";
+import { MovieCreditSlice } from "@/components/detail-page/movie-credits";
+import { MovieSimilarSlice } from "@/components/detail-page/movie-similar";
+import { MovieVideosSlice } from "@/components/detail-page/movie-videos";
+import styles from "@/styles/detail-page/movie-content.module.scss";
+import { Suspense } from "react";
 
 export default function Page({ params: { id } }: { params: { id: string } }) {
-  const searchParams = useSearchParams();
-  const search = searchParams.get("page");
-  const hasSearch = searchParams.has("page")
+  return (
+    <section className={styles.synopsys__container}>
+      <Suspense fallback={<h1>Loading...</h1>}>
+        <MovieAbout id={id} />
+      </Suspense>
 
-  // url 임의 수정 접근 방지
-  const HandleRedirect = () => {
-    // redirect(`/movies/${id}/?page=main`)
-    redirect(`/movies/${id}/?page=main`)
-  }
-  if(!hasSearch || search===''){ HandleRedirect() }
+      <Suspense fallback={<h1>Loading...</h1>}>
+        <MovieCreditSlice id={id} />
+      </Suspense>
 
-  switch(search) {
-    case "main":
-      return <MovieSynopsys id={id} />;
-    case "credits":
-      return <MovieCreditsPage id={id} />;
+      <Suspense fallback={<h1>Loading...</h1>}>
+        <MovieVideosSlice id={id} />
+      </Suspense>
 
-    case "video":
-      return <MovieVideosPage id={id} />;
-
-    case "similar":
-      return <MovieSimilarPage id={id} />;
-    
-    default: HandleRedirect()
-  }
+      <Suspense fallback={<h1>Loading...</h1>}>
+        <MovieSimilarSlice id={id} />
+      </Suspense>
+    </section>
+  );
 }

@@ -5,8 +5,8 @@ import { FaStar, FaClock, FaRegCalendarAlt } from "react-icons/fa";
 export default async function MovieCredits({ id }) {
   const movie = await getMovie(id);
 
-  const hour = Math.floor(movie.runtime/60);
-  const minute = movie.runtime%60;
+  const hour = Math.floor(movie.runtime / 60);
+  const minute = movie.runtime % 60;
 
   return (
     <section className={styles.info}>
@@ -27,7 +27,9 @@ export default async function MovieCredits({ id }) {
         <p>
           <FaClock /> {hour}h {minute}m
         </p>
-        <p><FaRegCalendarAlt /> {movie.release_date}</p>
+        <p>
+          <FaRegCalendarAlt /> {movie.release_date}
+        </p>
       </article>
     </section>
   );
