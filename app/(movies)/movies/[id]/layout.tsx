@@ -3,7 +3,6 @@ import { Suspense } from "react";
 import { getMovie } from "@/util/getData";
 import MoviePoster from "@/components/detail-page/movie-poster";
 import MovieInfo from "@/components/detail-page/movie-info";
-import MovieNav from "@/components/detail-page/movie-nav";
 
 export async function generateMetadata({
   params: { id },
@@ -49,10 +48,6 @@ export default async function MovieDetailLayout({
           </Suspense>
         </article>
       </section>
-
-      {/* detail-page Navigation */}
-      {/* <MovieNav id={id} /> */}
-
 
       {/* content */}
       <Suspense fallback={<h1>Loading...</h1>}>{children}</Suspense>
