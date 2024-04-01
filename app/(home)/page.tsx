@@ -2,7 +2,6 @@ import { API_URL } from "@/util/contants";
 import Movie from "@/components/movie";
 import styles from "@/styles/home.module.scss";
 
-
 export const metadata = {
   title: "HOME",
 };
