@@ -1,5 +1,6 @@
 import styles from "@/styles/detail-page/movie-info.module.scss";
 import { getMovie } from "@/util/getData";
+import Link from "next/link";
 import { FaStar, FaClock, FaRegCalendarAlt } from "react-icons/fa";
 
 export default async function MovieCredits({ id }) {
@@ -11,7 +12,9 @@ export default async function MovieCredits({ id }) {
   return (
     <section className={styles.info}>
       <article className={styles.top_group}>
-        <h1>{movie.title}</h1>
+        <Link href={`/movies/${id}`}>
+          <h1>{movie.title}</h1>
+        </Link>
         <ul>
           {movie.genres.map((el: { id: number; name: string }) => (
             <li key={el.id}>
