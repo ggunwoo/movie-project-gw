@@ -57,7 +57,7 @@
       padding: 0 0 0 16px;
       margin: 0 0 100px;
     }
-    // 제조국
+    // 제조사, 제조국
     h3 {
       color: #888;
       font-weight: bold;
@@ -66,6 +66,8 @@
     }
     ul {
       margin: 0 0 50px;
+      flex-wrap: wrap;
+      line-height: 1.5rem;
     }
   }
   // 출연진
