@@ -23,6 +23,7 @@ export default async function MovieDetailLayout({
   params: { id: string };
 }) {
   const movies = await getMovie(id);
+
   return (
     <main className={styles.container}>
       {/* 좌측 poster-section */}
@@ -32,7 +33,7 @@ export default async function MovieDetailLayout({
           className={styles.bg__img}
           style={{
             background: `url(${movies.backdrop_path}) no-repeat center 0`,
-            backgroundSize: "100% auto",
+            backgroundSize: "100% minmax(600px auto)",
           }}
         ></figure>
         <div className={styles.bg__mask}></div>
@@ -47,7 +48,6 @@ export default async function MovieDetailLayout({
           </Suspense>
         </article>
       </section>
-
       {/* content */}
       <Suspense fallback={<h1>Loading...</h1>}>{children}</Suspense>
     </main>
