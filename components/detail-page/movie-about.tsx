@@ -1,5 +1,5 @@
 import styles from "@/styles/detail-page/movie-content.module.scss";
-import { getMovie } from "@/util/getData";
+import { getMovie } from "@/utils/getData";
 
 export default async function MovieAbout({ id }) {
   const movies = await getMovie(id);

@@ -1,6 +1,6 @@
 import styles from "@/styles/detail-page/movie-page.module.scss";
 import { Suspense } from "react";
-import { getMovie } from "@/util/getData";
+import { getMovie } from "@/utils/getData";
 import MoviePoster from "@/components/detail-page/movie-poster";
 import MovieInfo from "@/components/detail-page/movie-info";
 

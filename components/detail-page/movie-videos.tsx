@@ -1,5 +1,5 @@
 import styles from "@/styles/detail-page/movie-content.module.scss";
-import { getMovie, getVideos } from "@/util/getData";
+import { getMovie, getVideos } from "@/utils/getData";
 import Link from "next/link";
 
 export default async function MovieVideosPage({ id }: { id: string }) {

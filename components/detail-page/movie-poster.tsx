@@ -1,5 +1,5 @@
 import styles from "@/styles/detail-page/movie-poster.module.scss";
-import { getMovie } from "@/util/getData";
+import { getMovie } from "@/utils/getData";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 

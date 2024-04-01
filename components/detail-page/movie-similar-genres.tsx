@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "@/styles/detail-page/movie-content.module.scss";
-import { getMovie } from "@/util/getData";
+import { getMovie } from "@/utils/getData";
 import { useEffect, useState } from "react";
 
 export default function SimilarGenres({ id }: { id: number }) {
