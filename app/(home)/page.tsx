@@ -17,7 +17,7 @@ export default async function HomePage() {
   const movies = await getMovies();
 
   return (
-    <div className={styles.container}>
+    <main className={styles.container}>
       {movies.map((movie) => (
         <Movie
           key={movie.id}
@@ -26,6 +26,6 @@ export default async function HomePage() {
           title={movie.title}
         />
       ))}
-    </div>
+    </main>
   );
 }
