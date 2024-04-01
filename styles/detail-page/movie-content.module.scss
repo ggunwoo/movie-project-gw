@@ -6,6 +6,7 @@
   width: 70%;
   grid-area: bottom;
   margin: 0 auto;
+  padding: 0 0 100px;
 }
 .credits__container,
 .videos__container,
@@ -44,7 +45,7 @@
       margin: 24px 0 0;
     }
   }
-  // -------------------------------------------
+
   // 소개
   .about {
     h2 {
@@ -75,21 +76,34 @@
     ul {
       li {
         width: 20%;
+        max-width: 185px;
         text-align: center;
+        place-self: center;
         img {
           width: 100%;
+          height: 100%;
           border-radius: 3%;
           margin-bottom: 8px;
-          padding: 0 24px 16px;
+          transform: scale(0.875);
         }
-        .credit_name {
-          font-size: 18px;
-          font-weight: bold;
-          margin-bottom: 12px;
+        .avatar {
+          width: 100%;
+          img {
+            background-color: #333;
+            height: 100%;
+          }
         }
-        .credit_character {
-          font-size: 16px;
-          color: #888;
+        .text_group {
+          height: 80px;
+          .credit_name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 12px;
+          }
+          .credit_character {
+            font-size: 16px;
+            color: #888;
+          }
         }
       }
     }
@@ -99,6 +113,7 @@
     ul {
       li {
         width: 33%;
+        max-width: 350px;
         iframe {
           width: 100%;
           border-radius: 10px;
@@ -118,40 +133,61 @@
       justify-content: space-between;
       li {
         width: 18%;
-        img {
-          width: 100%;
-          border-radius: 10%;
-          margin: 0 0 6px;
-        }
-        // similar title
-        p {
-          font-size: 0.875rem;
-          color: #aaa;
+        a {
+          text-decoration: none;
+          img {
+            width: 100%;
+            height: 100%;
+            border-radius: 10%;
+            margin: 0 0 6px;
+          }
+          // similar title
+          p {
+            font-size: 0.875rem;
+            color: #aaa;
+          }
+          &:hover {
+            img {
+              opacity: .8;
+            }
+          }
         }
       }
     }
   }
-  // -------------------------------------------
 }
 
 // credits
 .credits__container {
   ul {
-    text-align: left;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, auto));
-    grid-template-rows: 1fr auto;
-    justify-content: space-between;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 50px;
     li {
+      width: 100%;
+      height: 100%;
       display: flex;
+      flex-wrap: wrap;
       figure {
+        width: 30%;
+        place-self: center;
         img {
           width: 100%;
           height: 100%;
+          border-radius: 5px;
+        }
+        .avatar {
+          width: 100%;
+          height: 100%;
+          background-color: #666;
+          border-radius: 100%;
+          img {
+            border-radius: 100%;
+          }
         }
       }
       article {
+        width: 70%;
         padding: 16px 0 0 36px;
         .name {
           font-size: 1.25rem;
@@ -198,27 +234,43 @@
 .similar__container {
   > ul {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 50px;
     li {
       width: 100%;
       height: 100%;
       display: flex;
-      flex-wrap: wrap;
-      img {
-        width: 20%;
+      flex-direction: column;
+      a {
+        width: 100%;
+        img {
+          transition: opacity .2s ease-in-out;
+          width: 100%;
+        }
+        &:hover {
+          img {
+            opacity: .8;
+          }
+        }
       }
       article {
-        width: 70%;
+        width: 100%;
         height: 100%;
-        padding: 0 0 0 16px;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
         // position: relative;
-        .title {
-          font-size: 1.125rem;
-          line-height: 1.75rem;
+        a {
+          text-decoration: none;
+          .title {
+            transition: opacity .2s ease-in-out;
+            font-size: 1.125rem;
+            line-height: 2rem;
+          }
+          &:hover {
+            .title {
+              color: #aaa;
+            }
+          }
         }
         .genres {
           display: flex;
@@ -228,10 +280,6 @@
             color: #aaa;
             font-size: 0.875rem;
           }
-        }
-        a {
-          font-size: 0.875rem;
-          align-self: flex-end;
         }
       }
     }

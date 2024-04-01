@@ -1,5 +1,5 @@
 import styles from "@/styles/detail-page/movie-info.module.scss";
-import { getMovie } from "@/util/getData";
+import { getMovie } from "@/utils/getData";
 import Link from "next/link";
 import { FaStar, FaClock, FaRegCalendarAlt } from "react-icons/fa";
 
