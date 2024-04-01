@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "@/styles/detail-page/movie-navigation.module.scss";
+import styles from "@/styles/detail-page/movie-nav.module.scss";
 import Link from "next/link";
 
 export default function MovieNav({ id }) {
