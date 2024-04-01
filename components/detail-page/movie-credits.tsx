@@ -5,14 +5,22 @@ import Link from "next/link";
 export default async function MovieCreditPage({ id }: { id: string }) {
   const credits = await getCredits(id);
   return (
-    <div className={styles.credits__container}>
-      {credits.map((credit) => (
-        <div className={styles.card} key={credit.id}>
-          <img src={credit.profile_path} />
-          <p className={styles.name}>{credit.name}</p>
-        </div>
-      ))}
-    </div>
+    <section className={styles.credits__container}>
+      <h2>CAST</h2>
+      <ul>
+        {credits.map((credit) => (
+          <li key={credit.id}>
+            <figure>
+              <img src={credit.profile_path} />
+            </figure>
+            <article>
+              <p className={styles.name}>{credit.name}</p>
+              <p className={styles.character}>as {credit.character}</p>
+            </article>
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 }
 
@@ -23,20 +31,18 @@ export async function MovieCreditSlice({ id }: { id: string }) {
   return (
     <article className={styles.credits}>
       <h2>CAST</h2>
-      <div className={styles.article__list}>
-        <ul>
-          {sliceCredits.map((credit) => (
-            <li key={credit.id}>
-              <img src={credit.profile_path}></img>
-              <p>{credit.original_name}</p>
-              <span>as {credit.character}</span>
-            </li>
-          ))}
-        </ul>
-        <Link href={`/movies/${id}/similar`}>
-          <p>See All &rarr;</p>
-        </Link>
-      </div>
+      <ul>
+        {sliceCredits.map((credit) => (
+          <li key={credit.id}>
+            <img src={credit.profile_path}></img>
+            <p className={styles.credit_name}>{credit.name}</p>
+            <p className={styles.credit_character}>as {credit.character}</p>
+          </li>
+        ))}
+      </ul>
+      <Link prefetch href={`/movies/${id}/credit`}>
+        <p>See All &rarr;</p>
+      </Link>
     </article>
   );
 }
