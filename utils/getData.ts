@@ -2,8 +2,8 @@ import { API_URL } from "./contants";
 
 // 영화 정보
 export async function getMovie(id: string) {
-  const response = await fetch(`${API_URL}/${id}`);
-  return response.json();
+  const response = await fetch(`${API_URL}/${id}`)
+  return response.json(); 
 }
 
 // 비디오

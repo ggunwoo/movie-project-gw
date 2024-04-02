@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import styles from "@/styles/movie.module.scss";
+import Image from "next/image";
 
 interface IMovieProps {
   title: string;
@@ -17,7 +18,15 @@ export default function Movie({ title, id, poster_path }: IMovieProps) {
   };
   return (
     <section className={styles.movie}>
-      <img src={poster_path} alt={title} onClick={onClick} />
+      <figure>
+        <Image
+          src={poster_path}
+          alt={title}
+          onClick={onClick}
+          width={780}
+          height={1170}
+        />
+      </figure>
       <Link prefetch href={`/movies/${id}`}>
         {title}
       </Link>

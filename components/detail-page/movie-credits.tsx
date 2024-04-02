@@ -14,7 +14,6 @@ export default async function MovieCreditPage({ id }: { id: string }) {
         {credits.map((credit) => (
           <li key={credit.id}>
             <figure>
-              {/* <img src={credit.profile_path} /> */}
               {credit.profile_path ? (
                 <Image
                   src={credit.profile_path}
@@ -49,7 +48,6 @@ export async function MovieCreditSlice({ id }: { id: string }) {
       <ul>
         {sliceCredits.map((credit) => (
           <li key={credit.id}>
-            {/* <img src={credit.profile_path}></img> */}
             {credit.profile_path ? (
               <Image
                 src={credit.profile_path}
