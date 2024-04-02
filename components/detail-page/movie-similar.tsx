@@ -3,7 +3,7 @@ import { getSimilar } from "@/utils/getData";
 import Link from "next/link";
 import Image from "next/image";
 import SimilarGenres from "./movie-similar-genres";
-import Movie_Poster_Alterate from "@/public/movie-poster-alterate_180x1170.png";
+import Movie_Poster_Alterate from "@/public/movie-poster-alterate_780x1170.png";
 
 export default async function MovieSimilarPage({ id }: { id: string }) {
   const similar = await getSimilar(id);
@@ -15,7 +15,21 @@ export default async function MovieSimilarPage({ id }: { id: string }) {
         {similar.map((similar) => (
           <li key={similar.id}>
             <Link href={`/movies/${similar.id}`}>
-              <img src={similar.poster_path} alt="" />
+              {similar.poster_path ? (
+                <Image
+                  src={similar.poster_path}
+                  alt={similar.title}
+                  width={230}
+                  height={320}
+                />
+              ) : (
+                <Image
+                  src={Movie_Poster_Alterate}
+                  alt={similar.title}
+                  width={230}
+                  height={320}
+                />
+              )}
             </Link>
             <article>
               <div>
@@ -46,15 +60,17 @@ export async function MovieSimilarSlice({ id }: { id: string }) {
                 <Image
                   src={`${similar.poster_path}`}
                   alt={similar.title}
-                  width={780}
-                  height={1170}
+                  width={200}
+                  height={300}
+                  priority
                 />
               ) : (
                 <Image
                   src={Movie_Poster_Alterate}
                   alt="MOVIE_POSTER"
-                  width={780}
-                  height={1170}
+                  width={200}
+                  height={300}
+                  priority
                 />
               )}
               <p>{similar.title}</p>
