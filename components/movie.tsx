@@ -23,8 +23,9 @@ export default function Movie({ title, id, poster_path }: IMovieProps) {
           src={poster_path}
           alt={title}
           onClick={onClick}
-          width={780}
-          height={1170}
+          width={256}
+          height={380}
+          priority
         />
       </figure>
       <Link prefetch href={`/movies/${id}`}>
