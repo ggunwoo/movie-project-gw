@@ -131,8 +131,8 @@ c:\movie-project-gunw/
 │   ├── detail-page/
 │   │   ├── movie-content.module.scss
 │   │   ├── movie-info.module.scss
-│   │   └── movie-page.module.scss
-│   ├── movie-poster.module.scss
+│   │   ├── movie-page.module.scss
+│   │   └── movie-poster.module.scss 
 │   ├── home.module.scss
 │   └── movie.module.scss
 │   
@@ -140,7 +140,8 @@ c:\movie-project-gunw/
 │   └── global.d.ts
 ├── utils/
 │   ├── contents.ts
-│   └── getData.ts # 영화 정보(출연진, 비디오, 비슷한 영화) get호출
+│   └── getData.ts # 영화 정보 get호출
+│
 ├── README.md
 ├── next.config.js
 ├── tsconfig.json
@@ -148,3 +149,4 @@ c:\movie-project-gunw/
 ├── next-env.d.ts
 └── package.json
 ```
+> 2024-04-05 수정
