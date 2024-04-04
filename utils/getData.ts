@@ -1,4 +1,4 @@
-import { API_URL } from "./contants";
+import { API_URL } from "./contents";
 
 // 영화 정보
 export async function getMovie(id: string) {
