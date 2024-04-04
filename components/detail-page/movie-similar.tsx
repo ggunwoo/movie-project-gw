@@ -3,7 +3,7 @@ import { getSimilar } from "@/utils/getData";
 import Link from "next/link";
 import Image from "next/image";
 import SimilarGenres from "./movie-similar-genres";
-import Movie_Poster_Alterate from "@/public/movie-poster-alterate_780x1170.png";
+import Movie_Poster_Alterate from "@/public/poster-placeholder-780x1170.png";
 
 export default async function MovieSimilarPage({ id }: { id: string }) {
   const similar = await getSimilar(id);

@@ -1,4 +1,4 @@
-import { API_URL } from "@/utils/contants";
+import { API_URL } from "@/utils/contents";
 import Movie from "@/components/movie";
 import styles from "@/styles/home.module.scss";
 

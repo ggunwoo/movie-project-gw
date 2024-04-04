@@ -2,8 +2,8 @@ import styles from "@/styles/detail-page/movie-content.module.scss";
 import { getCredits } from "@/utils/getData";
 import Image from "next/image";
 import Link from "next/link";
-import Avatar_185x185 from "@/public/avatar_alterate_185x185.png";
-import Avatar_185x278 from "@/public/avatar_alterate_185x278.png";
+import Avatar_185x185 from "@/public/avatar-placeholder-185x185.png";
+import Avatar_185x278 from "@/public/avatar-placeholder-185x278.png";
 
 export default async function MovieCreditPage({ id }: { id: string }) {
   const credits = await getCredits(id);
