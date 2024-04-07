@@ -1,3 +1,6 @@
-export default function Loading(){
-  return <h2>Loading...</h2>
+import styles from "@/styles/loading/loading-home.module.scss";
+import Loader from "@/components/loader";
+
+export default function Loading() {
+  return <Loader />;
 }
