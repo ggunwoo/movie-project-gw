@@ -1,8 +1,10 @@
 import styles from "@/styles/detail-page/movie-page.module.scss";
 import { Suspense } from "react";
 import { getMovie } from "@/utils/getData";
-import MoviePoster from "@/components/detail-page/movie-poster";
+import MoviePoster, { PosterSkeleton } from "@/components/detail-page/movie-poster";
 import MovieInfo from "@/components/detail-page/movie-info";
+import Loader from "@/components/loader";
+import Navigation from "@/components/navigation";
 
 export async function generateMetadata({
   params: { id },
@@ -22,12 +24,14 @@ export default async function MovieDetailLayout({
   children: React.ReactNode;
   params: { id: string };
 }) {
+  // await new Promise((res) => setTimeout(res, 5000))
   const movies = await getMovie(id);
 
   return (
     <main className={styles.container}>
       {/* 좌측 poster-section */}
       <section className={styles.header__container}>
+        <Navigation />
         {/* Background Image */}
         <figure
           className={styles.bg__img}
@@ -38,19 +42,19 @@ export default async function MovieDetailLayout({
         ></figure>
         <div className={styles.bg__mask}></div>
         <article>
-          <Suspense fallback={<h1>Loading movie poster</h1>}>
+          <Suspense fallback={<PosterSkeleton />}>
             <MoviePoster id={id} />
           </Suspense>
 
           {/* 우측 Infomation-section */}
-          <Suspense fallback={<h1>Loading movie info</h1>}>
+          <Suspense fallback={<Loader />}>
             <MovieInfo id={id} />
           </Suspense>
         </article>
       </section>
 
       {/* content */}
-      <Suspense fallback={<h1>Loading...</h1>}>{children}</Suspense>
+      <Suspense fallback={<Loader />}>{children}</Suspense>
     </main>
   );
 }

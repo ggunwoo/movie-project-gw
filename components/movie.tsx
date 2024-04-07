@@ -2,12 +2,12 @@
 
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import styles from "@/styles/movie.module.scss";
+import styles from "@/styles/home.module.scss";
 import Image from "next/image";
 
 interface IMovieProps {
   title: string;
-  id: string;
+  id: string | number;
   poster_path: string;
 }
 
