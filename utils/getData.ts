@@ -18,7 +18,6 @@ export async function getVideos(id: string) {
   return response.json();
 }
 
-
 // 추쳔영화
 export async function getSimilar(id: string){
   const response = await fetch(`${API_URL}/${id}/similar`)

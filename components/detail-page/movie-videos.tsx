@@ -8,7 +8,7 @@ export default async function MovieVideosPage({ id }: { id: string }) {
     <section className={styles.videos__container}>
       <h2>VIDEOS</h2>
       <ul>
-        {videos.map((video) => (
+        {videos.map((video: video) => (
           <li>
             <iframe
               key={video.id}
@@ -35,7 +35,7 @@ export async function MovieVideosSlice({ id }: { id: string }) {
     <article className={styles.videos}>
       <h2>VIDEOS OF {movies.title.toUpperCase()}</h2>
       <ul>
-        {sliceVideos.map((video) => (
+        {sliceVideos.map((video: video) => (
           <li>
             <iframe
               key={video.id}

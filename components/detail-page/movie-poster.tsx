@@ -1,11 +1,10 @@
 import styles from "@/styles/detail-page/movie-poster.module.scss";
-import loadStyles from "@/styles/loading/loading-poster.module.scss"
+import loadStyles from "@/styles/loading/loading-poster.module.scss";
 import Link from "next/link";
 import { getMovie } from "@/utils/getData";
 
 export default async function MoviePoster({ id }: { id: string }) {
   const movie = await getMovie(id);
-  // await new Promise((res)=> setTimeout(res, 5000));
 
   return (
     <figure className={styles.poster}>
@@ -25,5 +24,5 @@ export function PosterSkeleton() {
     <figure className={loadStyles.skeleton_poster}>
       <div className={loadStyles.skeleton_img}></div>
     </figure>
-  )
+  );
 }

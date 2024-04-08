@@ -12,7 +12,7 @@ export default async function MovieSimilarPage({ id }: { id: string }) {
     <section className={styles.similar__container}>
       <h2>YOU MIGHT ALSO LIKE</h2>
       <ul>
-        {similar.map((similar) => (
+        {similar.map((similar: similar) => (
           <li key={similar.id}>
             <Link href={`/movies/${similar.id}`}>
               {similar.poster_path ? (
@@ -53,7 +53,7 @@ export async function MovieSimilarSlice({ id }: { id: string }) {
     <article className={styles.similar}>
       <h2>YOU MIGHT ALSO LIKE</h2>
       <ul>
-        {sliceSimilar.map((similar) => (
+        {sliceSimilar.map((similar: similar) => (
           <li key={similar.id}>
             <Link href={`/movies/${similar.id}`}>
               {similar.poster_path ? (
