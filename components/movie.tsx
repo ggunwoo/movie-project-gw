@@ -1,9 +1,8 @@
-"use client";
-
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 import styles from "@/styles/home.module.scss";
 import Image from "next/image";
+import getbase64 from "@/lib/getLocalBase64";
+
 
 interface IMovieProps {
   title: string;
@@ -11,23 +10,26 @@ interface IMovieProps {
   poster_path: string;
 }
 
-export default function Movie({ title, id, poster_path }: IMovieProps) {
-  const router = useRouter();
-  const onClick = () => {
-    router.push(`/movies/${id}`);
-  };
+export default async function Movie({ title, id, poster_path }: IMovieProps) {
+  const BlurDataUrl = await getbase64(poster_path);
+
   return (
     <section className={styles.movie}>
-      <figure>
+      <div>
+      <Link className={styles.poster} href={`/movies/${id}`}>
         <Image
           src={poster_path}
           alt={title}
-          onClick={onClick}
-          width={256}
-          height={380}
+          // onClick={onClick}
+          width={780}
+          height={1170}
+          sizes="250px"
+          placeholder="blur"
+          blurDataURL={BlurDataUrl}
           priority
         />
-      </figure>
+      </Link>
+      </div>
       <Link prefetch href={`/movies/${id}`}>
         {title}
       </Link>

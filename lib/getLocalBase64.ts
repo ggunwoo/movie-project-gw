@@ -1,6 +1,6 @@
 import { getPlaiceholder } from "plaiceholder";
 
-export default async function getbase64(imgUrl: string) {
+export default async function getbase64(imgUrl: string, imgSize: number=10) {
   try {
     const res = await fetch(imgUrl);
 
@@ -10,7 +10,7 @@ export default async function getbase64(imgUrl: string) {
 
     const buffer = await res.arrayBuffer();
 
-    const { base64 } = await getPlaiceholder(Buffer.from(buffer), { size: 10 });
+    const { base64 } = await getPlaiceholder(Buffer.from(buffer), { size: imgSize });
     console.log(`base64: ${base64}`);
 
     return base64;

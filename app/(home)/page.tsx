@@ -2,6 +2,7 @@ import { API_URL } from "@/utils/contents";
 import Movie from "@/components/movie";
 import styles from "@/styles/home.module.scss";
 
+
 export const metadata = {
   title: "HOME",
 };
@@ -14,6 +15,7 @@ async function getMovies() {
 
 export default async function HomePage() {
   const movies = await getMovies();
+  
 
   return (
     <main className={styles.container}>
