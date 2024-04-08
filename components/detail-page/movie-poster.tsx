@@ -1,18 +1,40 @@
 import styles from "@/styles/detail-page/movie-poster.module.scss";
 import loadStyles from "@/styles/loading/loading-poster.module.scss";
 import Link from "next/link";
+import Image from "next/image";
 import { getMovie } from "@/utils/getData";
+import getbase64 from "@/lib/getLocalBase64";
 
 export default async function MoviePoster({ id }: { id: string }) {
   const movie = await getMovie(id);
+
+  console.log(movie.poster_path)
+  const PosterBlurDataUrl = await getbase64(movie.poster_path)
 
   return (
     <figure className={styles.poster}>
       <Link href={`/movies/${id}`}>
         {movie.poster_path.includes("null") ? (
-          <img src="/poster-placeholder-780x1170.png" alt={movie.title} />
+          // <img src="/poster-placeholder-780x1170.png" alt={movie.title} />
+          <Image
+            src="/poster-placeholder-780x1170.png"
+            alt={movie.title}
+            width={780}
+            height={1170}
+            sizes="250px"
+          />
         ) : (
-          <img src={movie.poster_path} alt={movie.title} />
+          // <img src={movie.poster_path} alt={movie.title} />
+          <Image
+            src={movie.poster_path}
+            alt={movie.title}
+            width={780}
+            height={1170}
+            sizes="250px"
+            placeholder="blur"
+            blurDataURL={PosterBlurDataUrl}
+            priority
+          />
         )}
       </Link>
     </figure>
