@@ -13,18 +13,18 @@
       place-items: center;
       margin: 0 auto;
       
-      $skelton_color: #71717130;
+      $skeleton_color: #71717130;
       .skeleton_img {
         width: 250px;
         height: 375px;
         border-radius: 10px;
-        background-color: $skelton_color;
+        background-color: $skeleton_color;
       }
       .skeleton_title {
         width: 150px;
         height: 18px;
         border-radius: 10px;
-        background-color: $skelton_color;
+        background-color: $skeleton_color;
       }
     }
 }

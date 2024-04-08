@@ -26,5 +26,6 @@
     "sass": "^1.72.0",
     "typescript": "^5.4.2",
     "typescript-plugin-css-modules": "^5.1.0"
-  }
+  },
+  "type": "commonjs"
 }
