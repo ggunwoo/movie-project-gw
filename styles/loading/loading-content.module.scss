@@ -1,4 +1,5 @@
 $skeleton_color: #71717130;
+
 .skeleton_credits,
 .skeleton_videos,
 .skeleton_similar {
@@ -75,6 +76,43 @@ $skeleton_color: #71717130;
         width: 150px;
         height: 24px;
         border-radius: 5px;
+        background-color: $skeleton_color;
+      }
+    }
+  }
+}
+
+.skeleton_similar {
+  ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 50px;
+    li {
+      width: 100%;
+      height: 100%;
+      max-width: 450px;
+      min-width: 210px;
+      display: flex;
+      flex-direction: column;
+      .skeleton_poster {
+        width: 100%;
+        height: 300px;
+        margin-bottom: 12px;
+        background-color: $skeleton_color;
+        @media (max-width: 642px) {
+          height: 600px;
+        }
+        @media (max-width: 524px) {
+          height: 520px;
+        }
+        @media (max-width: 480px) {
+          height: 450px;
+        }
+        
+      }
+      .skeleton_title {
+        width: 150px;
+        height: 16px;
         background-color: $skeleton_color;
       }
     }

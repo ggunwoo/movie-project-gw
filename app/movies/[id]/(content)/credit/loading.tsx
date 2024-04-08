@@ -1,6 +1,6 @@
 import styles from "@/styles/loading/loading-content.module.scss";
 
-export default async function MovieCreditPage() {
+export default function Loading() {
   const creditsLength = new Array(20).fill(0);
   return (
     <section className={styles.skeleton_credits}>
