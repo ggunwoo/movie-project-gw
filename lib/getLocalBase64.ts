@@ -11,7 +11,6 @@ export default async function getbase64(imgUrl: string, imgSize: number=10) {
     const buffer = await res.arrayBuffer();
 
     const { base64 } = await getPlaiceholder(Buffer.from(buffer), { size: imgSize });
-    console.log(`base64: ${base64}`);
 
     return base64;
   } catch (err) {
