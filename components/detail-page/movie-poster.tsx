@@ -6,19 +6,17 @@ import { getMovie } from "@/utils/getData";
 import getbase64 from "@/lib/getLocalBase64";
 
 export default async function MoviePoster({ id }: { id: string }) {
-  const movie = await getMovie(id);
-
-  console.log(movie.poster_path)
-  const PosterBlurDataUrl = await getbase64(movie.poster_path)
+  const movies = await getMovie(id);
+  const BlurDataUrl = await getbase64(movies.poster_path)
 
   return (
     <figure className={styles.poster}>
       <Link href={`/movies/${id}`}>
-        {movie.poster_path.includes("null") ? (
+        {movies.poster_path.includes("null") ? (
           // <img src="/poster-placeholder-780x1170.png" alt={movie.title} />
           <Image
             src="/poster-placeholder-780x1170.png"
-            alt={movie.title}
+            alt={movies.title}
             width={780}
             height={1170}
             sizes="250px"
@@ -26,13 +24,13 @@ export default async function MoviePoster({ id }: { id: string }) {
         ) : (
           // <img src={movie.poster_path} alt={movie.title} />
           <Image
-            src={movie.poster_path}
-            alt={movie.title}
+            src={movies.poster_path}
+            alt={movies.title}
             width={780}
             height={1170}
             sizes="250px"
             placeholder="blur"
-            blurDataURL={PosterBlurDataUrl}
+            blurDataURL={BlurDataUrl}
             priority
           />
         )}
