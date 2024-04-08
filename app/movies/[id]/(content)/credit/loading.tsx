@@ -4,7 +4,7 @@ export default async function MovieCreditPage() {
   const creditsLength = new Array(20).fill(0);
   return (
     <section className={styles.skeleton_credits}>
-      <h2></h2>
+      <h2>CAST</h2>
       <ul>
         {creditsLength.map((el, index) => (
           <li key={index}>

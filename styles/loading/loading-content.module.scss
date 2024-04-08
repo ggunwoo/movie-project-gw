@@ -7,15 +7,15 @@ $skeleton_color: #71717130;
   margin: 0 auto;
   padding: 0 0 100px;
   h2 {
-    width: 100px;
-    height: 32px;
-    background-color: $skeleton_color;
+    font-size: 2rem;
+    font-weight: bold;
     margin: 0 0 70px;
     padding: 0 0 0 1rem;
+    border-left: 5px solid #666;
   }
 }
 
-/** Credits */
+// Credits
 .skeleton_credits {
   ul {
     display: grid;
@@ -52,6 +52,30 @@ $skeleton_color: #71717130;
           height: 16px;
           background-color: $skeleton_color;
         }
+      }
+    }
+  }
+}
+
+// Videos
+.skeleton_videos {
+  ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+    li {
+      .skeleton_iframe {
+        width: 303px;
+        height: 150px;
+        margin-bottom: 6px;
+        border-radius: 5px;
+        background-color: $skeleton_color;
+      }
+      p {
+        width: 150px;
+        height: 24px;
+        border-radius: 5px;
+        background-color: $skeleton_color;
       }
     }
   }
