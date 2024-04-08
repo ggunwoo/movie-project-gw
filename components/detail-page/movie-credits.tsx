@@ -11,7 +11,7 @@ export default async function MovieCreditPage({ id }: { id: string }) {
     <section className={styles.credits__container}>
       <h2>CAST</h2>
       <ul>
-        {credits.map((credit) => (
+        {credits.map((credit: credit) => (
           <li key={credit.id}>
             <figure>
               {credit.profile_path ? (
@@ -46,7 +46,7 @@ export async function MovieCreditSlice({ id }: { id: string }) {
     <article className={styles.credits}>
       <h2>CAST</h2>
       <ul>
-        {sliceCredits.map((credit) => (
+        {sliceCredits.map((credit: credit) => (
           <li key={credit.id}>
             {credit.profile_path ? (
               <Image
