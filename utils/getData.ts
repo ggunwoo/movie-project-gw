@@ -14,6 +14,7 @@ export async function getCredits(id: string) {
 
 // 비디오
 export async function getVideos(id: string) {
+  await new Promise((res)=> setTimeout(res, 3000));
   const response = await fetch(`${API_URL}/${id}/videos`);
   return response.json();
 }

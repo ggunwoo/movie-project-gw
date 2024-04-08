@@ -13,7 +13,7 @@
     cursor: pointer;
     place-items: center;
     margin: 0 auto;
-    // .poster {
+    .poster {
       display: block;
       img {
         width: 100%;
@@ -27,8 +27,8 @@
           opacity: 1;
         }
       }
-    // }
-    a {
+    }
+    .title {
       min-height: 36px;
       text-align: center;
     }
