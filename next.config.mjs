@@ -1,12 +1,8 @@
-const path = require("path");
+import withPlaiceholder from "@plaiceholder/next"
 
 /** @type {import('next').NextConfig} */
 
-const nextConfig = {
-  reactStrictMode: true,
-  sassOptions: {
-    includePaths: [path.join(__dirname, "styles")],
-  },
+const nextConfig = withPlaiceholder({
   images: {
     formats: ['image/webp'],
     remotePatterns: [
@@ -18,6 +14,6 @@ const nextConfig = {
       },
     ],
   },
-}
+})
 
-module.exports = nextConfig;
+export default nextConfig;
