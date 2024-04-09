@@ -32,15 +32,21 @@ export default async function MovieDetailLayout({
       {/* 좌측 poster-section */}
       <section className={styles.header__container}>
         <Navigation />
-        {/* Background Image */}
+
+        {/* ------Background Image------ */}
         <figure
           className={styles.bg__img}
           style={{
             background: `url(${movies.backdrop_path}) no-repeat center 0`,
-            backgroundSize: "100% minmax(600px auto)",
+            // backgroundSize: "100% minmax(600px auto)",
+            backgroundSize: "cover",
           }}
-        ></figure>
-        <div className={styles.bg__mask}></div>
+        >
+          <div className={styles.bg__mask}></div>
+        </figure>
+        
+        {/* ------------------------------ */}
+        
         <article>
           <Suspense fallback={<PosterSkeleton />}>
             <MoviePoster id={id} />
