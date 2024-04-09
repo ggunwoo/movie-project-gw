@@ -9,7 +9,7 @@ export default async function MovieVideosPage({ id }: { id: string }) {
       <h2>VIDEOS</h2>
       <ul>
         {videos.map((video: video) => (
-          <li>
+          <li key={video.id}>
             <iframe
               key={video.id}
               src={`https://youtube.com/embed/${video.key}`}
@@ -36,7 +36,7 @@ export async function MovieVideosSlice({ id }: { id: string }) {
       <h2>VIDEOS OF {movies.title.toUpperCase()}</h2>
       <ul>
         {sliceVideos.map((video: video) => (
-          <li>
+          <li key={video.id}>
             <iframe
               key={video.id}
               src={`https://youtube.com/embed/${video.key}`}
