@@ -1,13 +1,13 @@
 // 미디어쿼리 반응형 mixin 전역관리
 // 부트스트랩 반응형 레이아웃 기준
 
-// 576px 미만
+// 576px 미만 모바일
 @mixin xs {
   @media (max-width: 575.98px) {
     @content;
   }
 }
-// 768px 미만
+// 768px 미만 테블릿
 @mixin sm {
   @media (max-width: 767.98px) {
     @content;
