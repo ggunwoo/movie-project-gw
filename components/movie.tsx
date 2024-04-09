@@ -28,7 +28,7 @@ export default async function Movie({ title, id, poster_path }: IMovieProps) {
           priority
         />
       </Link>
-      <Link prefetch className={styles.title} prefetch href={`/movies/${id}`}>
+      <Link prefetch className={styles.title} href={`/movies/${id}`}>
         {title}
       </Link>
     </section>
