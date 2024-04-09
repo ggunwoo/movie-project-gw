@@ -1,11 +1,17 @@
+@import "mixin";
+
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(auto, 250px));
   justify-content: space-evenly;
   gap: 25px;
-  max-width: 90%;
-  width: 100%;
+  width: 90%;
   margin: 50px auto;
+
+  @include md {
+    width: 100%;
+  }
+
   .movie {
     display: grid;
     grid-template-rows: 1fr auto;

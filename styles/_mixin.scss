@@ -1,49 +1,42 @@
 // 미디어쿼리 반응형 mixin 전역관리
 // 부트스트랩 반응형 레이아웃 기준
 
-// 576px 미만 모바일
+// xxs: 346px 미만 작은 모바일
+// xs: 576px 미만 모바일
+// sm: 768px 미만 작은 테블릿, 폴드
+// md: 992px 미만 테블릿
+// lg: 1200px 미만 큰사이즈 테블릿
+// xl: 1200px 이상 (데스크탑)
+@mixin xxs {
+  @media (max-width: 345.98px) {}
+}
 @mixin xs {
-  @media (max-width: 575.98px) {
-    @content;
-  }
+  @media (max-width: 575.98px) { @content; }
 }
-// 768px 미만 테블릿
-@mixin sm {
-  @media (max-width: 767.98px) {
-    @content;
-  }
+@mixin sm { 
+  @media (max-width: 767.98px) { @content; }
 }
-// 992px 미만
 @mixin md {
-  @media (max-width: 991.98px) {
-    @content;
-  }
+  @media (max-width: 991.98px) { @content; }
 }
-// 1200px 미만
 @mixin lg {
-  @media (max-width: 1199.98px) {
-    @content;
-  }
+  @media (max-width: 1199.98px) { @content; }
 }
-// 1200px 이상
 @mixin xl {
-  @media (min-width: 1199.99px) {
-    @content;
-  }
+  @media (min-width: 1199.99px) { @content; }
 }
 
 // ------------------------------------
-// 폴드3(접|) - 320
-// 폴드3(폄[]) - 673
-// 폴드4(접|) - 345
-// 폴드4(폄[]) - 691
-
-// 플립(폄) - 384
+// 폴드3 접 | - 320
+// 폴드3 폄 [] - 673
+// 폴드4 접 | - 345
+// 폴드4 폄 [] - 691
 @mixin fold {
   @media (max-width: 345px) {
     @content;
   }
 }
+// 플립(폄) - 384
 @mixin flip {
   @media (max-widthl: 384px) {
     @content;

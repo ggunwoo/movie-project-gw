@@ -1,4 +1,4 @@
-@import "../_mixin.scss";
+@import "../mixin";
 
 .container {
   width: 100%;
@@ -14,6 +14,14 @@
     grid-area: top;
     // overflow: hidden;
     z-index: 1;
+    @include md {
+      height: 500px;
+      margin: 0 0 50px;
+    }
+    @include xs {
+      position: static;
+      height: 100%;
+    }
     
     > article {
       position: absolute;
@@ -27,17 +35,46 @@
       gap: 56px;
       transform: translate(-50%, -50%);
       z-index: 4;
+      @include lg {
+        width: 80%;
+        gap: 30px;
+      }
+      @include md {
+        width: 90%;
+        gap: 0px;
+      }
+      @include xs {
+        position: inherit;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        
+        transform: translate(0, 0);
+      }
     }
 
     // 백그라운드 이미지
     .bg__img {
       position: absolute;
-      left: 30%;
-      bottom: 0px;
+      right: 0;
+      top: 0;
       width: 70%;
       height: 100%;
       opacity: .7;
-      z-index: 1;
+      z-index: -4;
+      @include lg {
+        width: 50%;
+      }
+      @include sm {
+        opacity: .4;
+      }
+      @include xs {
+        width: 100%;
+        height: 100%;
+        opacity: .3;
+        transform: scale(1.3);
+      }
       &::after {
         content: "";
         position: absolute;
@@ -46,7 +83,7 @@
         display: block;
         width: 100%;
         height: 100%;
-        z-index: 2;
+        z-index: -3;
         background-color: rgba(0, 0, 0, .3);
       }
     }
@@ -56,9 +93,17 @@
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: 4;
-      background: linear-gradient(to right,#000 20%,rgba(15,15,15,0) 60%,#000 90%),
-                  linear-gradient(to top,#000 20%,rgba(15,15,15,.1) 60%, transparent 100%);
+      z-index: -2;
+      background: linear-gradient(to right,#000 20%,rgba(15,15,15,0) 60%,#000 100%),
+                  linear-gradient(to top,#000 15%,rgba(15,15,15,.1) 70%, transparent 100%);
+      @include lg {
+        background: linear-gradient(to right,#000 20%,rgba(15,15,15,0) 70%,#000 100%),
+                    linear-gradient(to top,#000 15%,rgba(15,15,15,.1) 70%, transparent 100%);
+      }
+      @include xs {
+        background: linear-gradient(to right,#000 20%,rgba(15,15,15,0) 90%,#000 100%),
+                    linear-gradient(to top,#000 30%,rgba(15,15,15,.1) 70%, transparent 100%);
+      }
     }
   }
 }
