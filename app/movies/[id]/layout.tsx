@@ -32,6 +32,17 @@ export default async function MovieDetailLayout({
       {/* 좌측 poster-section */}
       <section className={styles.header__container}>
         <Navigation />
+        
+        <article>
+          <Suspense fallback={<PosterSkeleton />}>
+            <MoviePoster id={id} />
+          </Suspense>
+
+          {/* 우측 Infomation-section */}
+          <Suspense fallback={<Loader />}>
+            <MovieInfo id={id} />
+          </Suspense>
+        </article>
 
         {/* ------Background Image------ */}
         <figure
@@ -47,16 +58,6 @@ export default async function MovieDetailLayout({
         
         {/* ------------------------------ */}
         
-        <article>
-          <Suspense fallback={<PosterSkeleton />}>
-            <MoviePoster id={id} />
-          </Suspense>
-
-          {/* 우측 Infomation-section */}
-          <Suspense fallback={<Loader />}>
-            <MovieInfo id={id} />
-          </Suspense>
-        </article>
       </section>
 
       {/* content */}

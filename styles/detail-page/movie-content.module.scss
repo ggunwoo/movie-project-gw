@@ -1,9 +1,17 @@
+@import "../mixin";
+
 @mixin container {
   width: 70%;
   grid-area: bottom;
   margin: 0 auto;
   padding: 0 0 100px;
+  @include lg {
+    width: 80%;
+  }
   
+  @include md {
+    width: 90%;
+  }
 }
 @mixin content-page {
   @include container;

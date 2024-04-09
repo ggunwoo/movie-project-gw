@@ -1,9 +1,14 @@
+@import "mixin";
+
 .nav {
   position: absolute;
   top: 36px;
   left: 5%;
   z-index: 10;
   opacity: .8;
+  @include md {
+    display: none;
+  }
   a {
     position: absolute;
     top: 0;
