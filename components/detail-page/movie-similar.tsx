@@ -63,7 +63,6 @@ export async function MovieSimilarSlice({ id }: { id: string }) {
                   alt={similar.title}
                   width={200}
                   height={300}
-                  priority
                 />
               ) : (
                 <Image
@@ -71,7 +70,6 @@ export async function MovieSimilarSlice({ id }: { id: string }) {
                   alt="MOVIE_POSTER"
                   width={200}
                   height={300}
-                  priority
                 />
               )}
               <p>{similar.title}</p>
