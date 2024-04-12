@@ -87,14 +87,14 @@ $ npm run dev
 <br />
 <br />
 
-## **4. 주목할만한 점**
-> - **이미지 렌더링 최적화 과정**  
+## **4. 주목할 만한 점**
+> - ***이미지 렌더링 최적화 과정***  
 > 이미지 사이즈 최적화, lazy loading 기능을 제공하는 Next/Image를 최대한 활용하여 이미지 호출시간을 감소시켜 초기 렌더링시 사용자에게 긍정적인 경험을 보장합니다.
 
-> - **CLS(Cumulative Layout Shift) 해결**  
+> - ***CLS(Cumulative Layout Shift) 해결***  
 > Next.js에 내장되어있는 loading UI 기능과 Suspense(fallback)을 사용하여 사용자에게 초기 렌더링시 Skeleton UI를 보여줌으로써 CLS 문제를 해결하였습니다.
 
-> - **동적 이미지 blur placeholder**  
+> - ***동적 이미지 blur placeholder***  
 > 사용자에게 skeleton UI 또한 너무 오래 노출된다면 부정적인 경험이 될 수 있다. 생각하여 동적 이미지 호출 시 블러처리된 이미지를 먼저 보여주기 위해 pla**i**ceholder와 sharp 라이브러리를 활용해 더욱 긍정적인 경험을 보장하였습니다.
 
 <br />
