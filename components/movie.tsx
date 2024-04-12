@@ -19,14 +19,13 @@ export default async function Movie({ title, id, poster_path }: IMovieProps) {
         <Image
           src={poster_path}
           alt={title}
-          // onClick={onClick}
           width={780}
           height={1170}
-          sizes="250px"
+          sizes="(max-width: 575.98px) 33vw"
           placeholder="blur"
           blurDataURL={BlurDataUrl}
-          priority
         />
+        {/* <img src={poster_path} alt={title} /> */}
       </Link>
       <Link prefetch className={styles.title} href={`/movies/${id}`}>
         {title}

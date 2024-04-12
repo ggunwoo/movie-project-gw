@@ -31,7 +31,6 @@ export default async function MoviePoster({ id }: { id: string }) {
             sizes="250px"
             placeholder="blur"
             blurDataURL={BlurDataUrl}
-            priority
           />
         )}
       </Link>
