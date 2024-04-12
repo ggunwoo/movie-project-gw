@@ -1,5 +1,3 @@
-![alt text](https://raw.githubusercontent.com/gunw-96/images/main/README_images/next_movie-images/nextjs-banner.png)
-
 <br />
 
 > ***프로젝트*** : 영화 웹사이트 포트폴리오
@@ -10,16 +8,18 @@
 >
 > ***제작기간*** : 24.03 ~ 현재 진행 중
 
-<br />
+> 영문으로 작성된 영화API를 활용한 웹사이트입니다.  
+> 이미지와 영상이 많은 영화 웹사이트에 Next.js을 사용하여  
+> 편리한 서버측 렌더링, 다양한 최적화 기능을 활용하여 개발하였습니다.
 
-> Vercel Link   
+> **Vercel Link**  
 > <https://movies-gunw.vercel.app/>
 
 <br />
 <br />
 <br />
 
-## **0. 시작 가이드**
+## **0. 시작가이드**
 
 
 
@@ -76,6 +76,8 @@ $ npm run dev
 <br />
 <br />
 
+
+
 ##  **3. Movie API**
 > https://nomad-movies.nomadcoders.workers.dev/
 >
@@ -85,8 +87,28 @@ $ npm run dev
 <br />
 <br />
 
+## **4. 주목할만한 점**
+> - **이미지 렌더링 최적화 과정**  
+> 이미지 사이즈 최적화, lazy loading 기능을 제공하는 Next/Image를 최대한 활용하여 이미지 호출시간을 감소시켜 초기 렌더링시 사용자에게 긍정적인 경험을 보장합니다.
 
-## **4. 프로젝트 디렉토리 구조**
+> - **CLS(Cumulative Layout Shift) 해결**  
+> Next.js에 내장되어있는 loading UI 기능과 Suspense(fallback)을 사용하여 사용자에게 초기 렌더링시 Skeleton UI를 보여줌으로써 CLS 문제를 해결하였습니다.
+
+> - **동적 이미지 blur placeholder**  
+> 사용자에게 skeleton UI 또한 너무 오래 노출된다면 부정적인 경험이 될 수 있다. 생각하여 동적 이미지 호출 시 블러처리된 이미지를 먼저 보여주기 위해 pla**i**ceholder와 sharp 라이브러리를 활용해 더욱 긍정적인 경험을 보장하였습니다.
+
+<br />
+
+- 더 나은 사용자 경험을 위해 최적화 및 반응형 작업을 진행하고있습니다.
+
+
+
+<br />
+<br />
+<br />
+
+
+## **5. 프로젝트 디렉토리 구조**
 ```bash
 c:\movie-project-gunw/
 ├── app/
@@ -104,11 +126,14 @@ c:\movie-project-gunw/
 │       ├── loading.tsx
 │       └── (content)/ # movie/[id]/...
 │           ├── credit/
-│           │   └─ page.tsx
+│           │   ├── page.tsx
+│           │   └── loading.tsx
 │           ├── similar/
-│           │   └── page.tsx
+│           │   ├── page.tsx
+│           │   └── loading.tsx
 │           └── video/
-│               └─ page.tsx
+│               ├── page.tsx
+│               └── loading.tsx
 │
 ├── components/
 │   ├── detail-page/
@@ -120,21 +145,33 @@ c:\movie-project-gunw/
 │   │   ├── movie-similar-genres.tsx
 │   │   └── movie-videos.tsx
 │   ├── navigation.tsx
+│   ├── loader.tsx
 │   └── movie.tsx
+│
+├── lib/
+│   └── getLocalBase64.ts # plaiceholder(Image blur)
 │
 ├── public/
 │   ├── favicon.ico
 │   └── Placeholder Images..
 │      # 대체 이미지(정적)
+│
 ├── styles/
 │   ├── glocal.scss
+│   ├── _mixin_.scss
 │   ├── detail-page/
 │   │   ├── movie-content.module.scss
 │   │   ├── movie-info.module.scss
 │   │   ├── movie-page.module.scss
 │   │   └── movie-poster.module.scss 
 │   ├── home.module.scss
-│   └── movie.module.scss
+│   ├── movie.module.scss
+│   ├── navigation.module.scss
+│   └── loading/
+│       ├── loader-components.module.scss
+│       ├── loading-content.module.scss
+│       ├── loading-home.module.scss
+│       └── loading-poster.module.scss
 │   
 ├── types/
 │   └── global.d.ts
@@ -149,4 +186,4 @@ c:\movie-project-gunw/
 ├── next-env.d.ts
 └── package.json
 ```
-> 2024-04-05 수정
+> <i>Update : 2024-04-12<i>
