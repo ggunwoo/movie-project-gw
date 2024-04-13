@@ -9,12 +9,12 @@ export default function Footer() {
         <p>Copyright &copy; 2024 ggunwoo. All rights reserved. </p>
         <ul>
           <li>
-            <Link href={"https://github.com/ggunwoo"}>
+            <Link href={"https://github.com/ggunwoo"} target="_blank">
               <SiGithub />
             </Link>
           </li>
           <li>
-            <Link href={"https://gunw.notion.site/2d7b43752d4140dc953fb5c5b5b36eec?pvs=4"}>
+            <Link href={"https://gunw.notion.site/2d7b43752d4140dc953fb5c5b5b36eec?pvs=4"} target="_blank">
               <SiNotion />
             </Link>
           </li>
