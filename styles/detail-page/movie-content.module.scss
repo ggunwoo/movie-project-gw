@@ -101,13 +101,10 @@
         max-width: 185px;
         text-align: center;
         img {
-          width: 100%;
+          width: 90%;
           height: 100%;
           border-radius: 3%;
           margin-bottom: 8px;
-          @include xs {
-            width: 90%;
-          }
         }
         .avatar {
           width: 100%;
@@ -117,6 +114,7 @@
           }
         }
         .text_group {
+          width: 100%;
           @include xs {
             width: 90%;
           }
@@ -137,6 +135,7 @@
   // 비디오
   .videos {
     ul {
+      gap: 30px;
       li {
         width: 33%;
         max-width: 350px;
