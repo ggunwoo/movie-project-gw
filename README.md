@@ -145,6 +145,7 @@ c:\movie-project-gunw/
 │   │   ├── movie-similar-genres.tsx
 │   │   └── movie-videos.tsx
 │   ├── navigation.tsx
+│   ├── footer.tsx
 │   ├── loader.tsx
 │   └── movie.tsx
 │
@@ -164,6 +165,7 @@ c:\movie-project-gunw/
 │   │   ├── movie-info.module.scss
 │   │   ├── movie-page.module.scss
 │   │   └── movie-poster.module.scss 
+│   ├── footer.module.scss
 │   ├── home.module.scss
 │   ├── movie.module.scss
 │   ├── navigation.module.scss
