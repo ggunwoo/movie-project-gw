@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import "@/styles/global.scss";
+import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
   title: {
@@ -14,6 +15,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <html lang="en">
       <body>
         {children}
+        <Footer />
       </body>
     </html>
   );
