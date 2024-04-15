@@ -184,4 +184,4 @@ c:\movie-project-gunw/
 ├── next-env.d.ts
 └── package.json
 ```
-> <i>Update : 2024-04-12<i>
+> <i>Update : 2024-04-15<i>
