@@ -19,8 +19,6 @@
 
 ## **- 시작가이드**
 
-
-
 #### - 설치
 ```bash
 $ git clone https://github.com/ggunwoo/movie-project-gunw.git
