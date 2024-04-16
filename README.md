@@ -94,15 +94,6 @@ $ npm run dev
 <br />
 
 
-##  **- 영화 API**
-> https://nomad-movies.nomadcoders.workers.dev/
->
-> Made by Nomad Coders ( <https://www.youtube.com/@nomadcoders> )
-
-<br />
-<br />
-<br />
-
 
 ## **- 프로젝트 디렉토리 구조**
 ```bash
