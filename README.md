@@ -65,11 +65,11 @@ $ npm run dev
 
 | 메인 페이지 | 디테일페이지 |
 |:---------------:|:---------------:|
-| <img width="600" src="https://raw.githubusercontent.com/gunw-96/images/main/README_images/next_movie-images/main-page.png" /> | <img width="300" src="https://raw.githubusercontent.com/gunw-96/images/main/README_images/next_movie-images/detail-page.PNG" /> |
+| <img width="600" src="https://raw.githubusercontent.com/gunw0-0/images/main/README_images/next_movie-images/main-page.png" /> | <img width="300" src="https://raw.githubusercontent.com/gunw0-0/images/main/README_images/next_movie-images/detail-page.PNG" /> |
 
 |출연진 소개 페이지|관련 비디오 페이지|비슷한 영화 추천 페이지
 |:---------------:|:---------------:|:---------------:|
-| <img width="300" src="https://raw.githubusercontent.com/gunw-96/images/main/README_images/next_movie-images/credits-page.png" /> | <img width="300" src="https://raw.githubusercontent.com/gunw-96/images/main/README_images/next_movie-images/videos-page.png" /> | <img width="300" src="https://raw.githubusercontent.com/gunw-96/images/main/README_images/next_movie-images/similar-page.png" /> |
+| <img width="300" src="https://raw.githubusercontent.com/gunw0-0/images/main/README_images/next_movie-images/credits-page.png" /> | <img width="300" src="https://raw.githubusercontent.com/gunw0-0/images/main/README_images/next_movie-images/videos-page.png" /> | <img width="300" src="https://raw.githubusercontent.com/gunw0-0/images/main/README_images/next_movie-images/similar-page.png" /> |
 
 <br />
 <br />
